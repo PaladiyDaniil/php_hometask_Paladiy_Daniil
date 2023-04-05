@@ -1,0 +1,12 @@
+<div>
+    Welcome to {$page}
+</div>
+
+{foreach $topics as $topic}
+    <div>
+        {$topic['author']}<br>
+        {$topic['title']}<br>
+        {$topic['text']}<br>
+    </div>
+    <hr>
+{/foreach}

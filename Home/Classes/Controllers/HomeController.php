@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class HomeController
+ * @package Phpcourse\Myproject\Classes\Controllers
+ */
+
 namespace Phpcourse\Myproject\Classes\Controllers;
 
 use Phpcourse\Myproject\Classes\Interfaces\ControllerMethodName;
@@ -10,7 +15,9 @@ class HomeController implements ControllerMethodName
 {
 
     public function index() : void{
-        $data = ['title' => 'Home', 'content' => 'main_pages/home'];
-        new Rendering($data);
+
+        // Просто передали назву сторінки в шаблон
+
+        new Rendering(['page' => 'home']);
     }
 }

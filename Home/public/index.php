@@ -1,41 +1,30 @@
 <?php
-    session_start();
-    $debug = true;
+    session_start(); // Функція для запуску сесії
+    $debug = false; // Параметр, що належить до налагоджувальної інформації
 
-    require_once __DIR__.'/../../vendor/autoload.php';
+    require_once __DIR__.'/../../vendor/autoload.php'; // Автозавантаження класів
 
-
-    use Phpcourse\Myproject\Classes\Controllers\AboutController;
-    use Phpcourse\Myproject\Classes\Controllers\LoginController;
-    use Phpcourse\Myproject\Classes\Controllers\ContactsController;
+    // Блок неймспейсів
+    use Phpcourse\Myproject\Classes\Controllers\ForumController;
     use Phpcourse\Myproject\Classes\Controllers\HomeController;
+    use Phpcourse\Myproject\Classes\Controllers\ProfileController;
     use Phpcourse\Myproject\Classes\Controllers\NewsController;
-    use Phpcourse\Myproject\Classes\Controllers\PassportController;
-    use Phpcourse\Myproject\Classes\Controllers\PortfolioController;
-    use Phpcourse\Myproject\Classes\Controllers\RegisterController;
-    use Phpcourse\Myproject\Classes\Controllers\StudentsParliamentController;
-    use Phpcourse\Myproject\Classes\Interfaces\ControllerMethodName;
     use Phpcourse\Myproject\Classes\Router\Router;
     use Phpcourse\Myproject\Classes\StartApplication;
 
-    $router = new Router();
+    $router = new Router(); // Створюємо об'єкт класу Router
 
-    $router->addRoute('/', HomeController::class, ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/home', HomeController::class, ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/about', AboutController::class, ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/contacts', ContactsController::class,ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/news',NewsController::class, ControllerMethodName::METHOD_NAME);
+    // Додаємо маршрути
+    $router->addRoute('/', HomeController::class, 'index');
+    $router->addRoute('/home', HomeController::class, 'index');
+    $router->addRoute('/forum', ForumController::class, 'index');
+    // /profile
+    $router->addRoute('/profile', ProfileController::class, 'index');
+    // /news
+    $router->addRoute('/news', NewsController::class, 'index');
 
-    $router->addRoute('/sp',StudentsParliamentController::class,ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/portfolios',PortfolioController::class,ControllerMethodName::METHOD_NAME);
+    // Створюємо об'єкт класу StartApplication та передаємо йому об'єкт класу Router та запит з адресної стрічки
+    $app = StartApplication::getInstance($router, $_SERVER['REQUEST_URI'] ?? '/');
 
-    $router->addRoute('/passport', PassportController::class, ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/login', LoginController::class, ControllerMethodName::METHOD_NAME);
-    $router->addRoute('/register', RegisterController::class, ControllerMethodName::METHOD_NAME);
-
-    //$router->addRoute('/admin', AdminController::class, ControllerMethodName::METHOD_NAME);
-
-    $app = new StartApplication($router, $_SERVER['REQUEST_URI'] ?? '/');
-
+    // Запускаємо метод run() класу StartApplication
     $app->run();
-

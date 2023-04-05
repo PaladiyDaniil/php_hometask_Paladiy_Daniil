@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Trait DebugTrait
+ * @package Phpcourse\Myproject\Classes\Traits
+ */
+
 namespace Phpcourse\Myproject\Classes\Traits;
 
 trait DebugTrait

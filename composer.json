@@ -10,11 +10,14 @@
     },
     "authors": [
         {
-            "name": "Surkov.K",
-            "email": "kskrua@gmail.com"
+            "name": "My Name",
+            "email": "MyEmail@gmail.com"
         }
     ],
     "minimum-stability": "beta",
     "require": {
+        "php": ">=8.1.0",
+        "monolog/monolog": "3.3.1",
+        "latte/latte": "^v3.0.6"
     }
 }

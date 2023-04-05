@@ -1,2 +1,4 @@
-/Home/public/templates/default/smarty/compile/
 .idea/
+/vendor/
+composer.lock
+/Home/public/logs/

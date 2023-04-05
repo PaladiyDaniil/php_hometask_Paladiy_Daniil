@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    container_name: my-nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - "./:/var/www/html"
+    ports:
+      - "80:80"
+    depends_on:
+      - php
+
+  php:
+    image: php:8.2-fpm
+    container_name: my-php
+    volumes:
+      - "./:/var/www/html"
