@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PHPTestProject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/php_hometask_Paladiy_Daniil" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/php_hometask_Paladiy_Daniil/PHPTestProject" vcs="Git" />

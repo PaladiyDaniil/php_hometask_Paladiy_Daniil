@@ -1,0 +1,20 @@
+{
+    "name": "phpcourse/myproject",
+    "description": "Test project to learning php",
+    "type": "project",
+    "license": "free",
+    "autoload": {
+        "psr-4": {
+            "Phpcourse\\Myproject\\": "Home/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Surkov.K",
+            "email": "kskrua@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+    }
+}
