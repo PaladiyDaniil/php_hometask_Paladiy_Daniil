@@ -24,6 +24,22 @@ class StartApplication
 
     private static ?StartApplication $instance = null; // Статична змінна для зберігання екземпляру класу
 
+    private function Singletone()
+{
+
+}
+    public static function getInstant()
+    {
+        if (self::$instance === null){
+            self::$instance  = new StartApplication();
+        }
+        return self::$instance;
+    }
+    public function Instant()
+    {
+
+    }
+
     private function __construct(readonly Router $router, string $URI)
     {
         $this->URI = $URI; // записуємо URI в змінну
@@ -54,3 +70,5 @@ class StartApplication
         }
     }
 }
+$app = StartApplication::getInstance();
+$app->Instance();
