@@ -1,3 +1,17 @@
 <div>
-    Welcome to {$page}
+    /\/\Welcome to {$page}/\/\
 </div>
+
+{foreach $home as $h}
+    <div>
+        <br><br>
+        {$h['title']}<br>
+        {$h['text']}<br>
+        {$h['pages0']}<br>
+        {$h['pages1']}<br>
+        {$h['pages2']}<br>
+        {$h['pages3']}<br>
+
+    </div>
+    <hr>
+{/foreach}
